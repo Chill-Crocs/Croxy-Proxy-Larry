@@ -31,6 +31,11 @@ app.get('/api/items/:itemID', (req, res) => {
     .then((response) => res.send(response.data));
 });
 
+app.patch('/api/items/:itemID', (req, res) => {
+  axios.patch(`http://3.140.248.238:3004/api/items/${0}`, { favorite: req.body.favorite })
+    .then(() => res.sendStatus(204));
+});
+
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
