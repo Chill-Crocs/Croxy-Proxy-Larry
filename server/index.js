@@ -10,6 +10,7 @@ console.log(PUBLIC_DIR)
 const app = express();
 
 app.use(express.static(PUBLIC_DIR));
+app.use(express.json());
 
 app.get('/api/reviews/:id', (req, res) => {
   axios.get(`http://18.221.226.62:3002/api/reviews/${5}`)
