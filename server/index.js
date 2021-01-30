@@ -5,6 +5,7 @@ const morgan = require('morgan');
 
 const port = 3000
 
+
 const PUBLIC_DIR = path.resolve(__dirname, '..', 'public');
 console.log(PUBLIC_DIR)
 const app = express();
@@ -36,6 +37,8 @@ app.patch('/api/items/:itemID', (req, res) => {
   axios.patch(`http://3.140.248.238:3004/api/items/${0}`, { favorite: req.body.favorite })
     .then(() => res.sendStatus(204));
 });
+
+
 
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
